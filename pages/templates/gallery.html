@@ -2,13 +2,14 @@
 {% block title %}Gallery{% endblock title %}
 {% block content %}
 {% load static %} 
+
 <h1>Gallery</h1>
 <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-    {% {% for image in images %}%}
+    {% for img in images %}
         <figure>
-            <img src="{% static 'img/' %}" {{img}} alt="Gallery Image" width="200">
-            <figcaption>Image {{ img }}</figcaption>
+            <img src="{% static img %}" alt="Gallery Image" width="200">
+            <figcaption>{{ img }}</figcaption>
         </figure>
     {% endfor %}
-    </div>
+</div>
 {% endblock content %}
